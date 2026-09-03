@@ -1,5 +1,7 @@
 # OpenMagia for Pinokio
 
+![OpenMagia Pinokio cover](poster.png)
+
 Pinokio launcher for [OpenMagia](https://github.com/davidaircloud/OpenMagia), a local-first AI video editor. The launcher repository contains only lifecycle scripts; it clones the application into `app/`, leaving the main OpenMagia repository independently maintained.
 
 ## Install directly
