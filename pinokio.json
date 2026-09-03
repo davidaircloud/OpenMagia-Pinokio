@@ -1,0 +1,20 @@
+{
+  "title": "OpenMagia",
+  "description": "Local-first AI video editor with optional native MiniMax H3 generation on Apple Silicon.",
+  "icon": "icon.svg",
+  "links": [
+    {
+      "title": "Project",
+      "links": [
+        {
+          "title": "OpenMagia",
+          "value": "https://github.com/davidaircloud/OpenMagia"
+        },
+        {
+          "title": "MiniMax H3 License",
+          "value": "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/LICENSE"
+        }
+      ]
+    }
+  ]
+}

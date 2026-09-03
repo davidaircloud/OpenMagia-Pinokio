@@ -1,0 +1,10 @@
+{
+  "name": "openmagia-pinokio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pinokio launcher for OpenMagia",
+  "scripts": {
+    "test": "node test/validate.js"
+  },
+  "license": "MIT"
+}
