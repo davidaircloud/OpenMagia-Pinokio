@@ -9,6 +9,7 @@ module.exports = {
       next: null
     },
     {
+      when: "{{args.acceptance !== 'I ACCEPT'}}",
       method: "input",
       params: {
         title: "Accept MiniMax H3 License",
@@ -26,7 +27,7 @@ module.exports = {
       params: {
         path: "app",
         env: {
-          OPENMAGIA_LICENSE_ACCEPTANCE: "{{input.acceptance}}"
+          OPENMAGIA_LICENSE_ACCEPTANCE: "{{args.acceptance === 'I ACCEPT' ? args.acceptance : input.acceptance}}"
         },
         message: [
           "set -euo pipefail",

@@ -31,6 +31,7 @@ assert(!/fs\.rm|reset --hard/.test(update), "updates must preserve user data")
 const model = fs.readFileSync(path.join(root, "install-model.js"), "utf8")
 assert(model.includes("I ACCEPT"), "model download must require explicit license acceptance")
 assert(model.includes("--no-formatter"), "model action must use the resumable OpenMagia installer")
+assert(model.includes("args.acceptance === 'I ACCEPT'"), "model action must accept an explicit non-interactive license confirmation")
 
 async function validateMenus() {
   const appDir = path.join(root, "app")

@@ -29,6 +29,14 @@ Updates do not delete or reset `projects/`, `media/`, `uploads/`, `data/`, `mode
 
 The generation action requires the user to review and explicitly accept the [MiniMax H3 Community License](https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/LICENSE). It invokes OpenMagia's idempotent installer, so interrupted Hugging Face downloads resume rather than restart.
 
+For automated testing after the operator has accepted that license, the same action can be invoked through Pinokio's terminal client with an explicit argument:
+
+```sh
+pterm start install-model.js --ref pinokio://127.0.0.1:42000/api/OpenMagia-Pinokio -- --acceptance='I ACCEPT'
+```
+
+Any other value still opens the license prompt and the installer independently checks the exact acceptance text before downloading.
+
 ## Local API
 
 Once **Start** reports that OpenMagia is ready, use the URL shown by Pinokio (for example, `http://localhost:42003`). The API is local and requires no cloud account.
