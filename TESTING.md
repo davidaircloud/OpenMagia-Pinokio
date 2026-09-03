@@ -19,7 +19,7 @@
 - [x] Launch while OpenMagia's usual port 8730 is occupied; confirm Pinokio selects another port.
 - [x] Interrupt a model download, rerun it, and confirm existing shards are reused.
 - [x] Update after creating a project and importing media; confirm both remain intact.
-- [ ] Generate a short clip on a 64+ GB Apple Silicon Mac with both checkpoints installed.
+- [x] Generate a short clip on a 64+ GB Apple Silicon Mac with both checkpoints installed.
 - [ ] Export that clip and play the resulting MP4.
 - [ ] Smoke-test editor startup on Intel macOS, Linux, and Windows, or narrow the listing platforms.
 
@@ -34,6 +34,9 @@ Record the Pinokio version, operating system, architecture, memory, available di
 - Dynamic launch URL: `http://localhost:42003`; HTTP and `/api/state` returned successfully
 - Occupied-port test: an independent server held port 8730 while OpenMagia remained ready on port 42003
 - Update preservation: project `Pinokio Update Preservation 2026-09-03` and its 1,756,428-byte uploaded image survived the update and relaunch
-- Download recovery: the MiniMax H3 installer was interrupted, preserved its partial cache, and reused completed files on the next run; authenticated continuation is in progress
+- Download recovery: the MiniMax H3 installer was interrupted, preserved its partial cache, reused completed files on the next run, and completed both FL2VA and Ref2VA after Hugging Face authentication
+- Native generation: `Pinokio Verification Clip`, 512×512, 8 requested frames, 2 denoising steps, completed as a silent 0.916667-second H.264 MP4 and was inserted on the base timeline
+- Export: OpenMagia produced a 512×512 H.264 MP4 at 24 fps; FFmpeg decoded the complete file without error and SHA-256 was `aa3d16ae0a34efe25d8c72d60ca95a754242dde63f0a9d3d2319b6e162e9b894`. Visual playback remains pending because the Mac was locked.
+- Generation validation exposed an API boundary defect: one denoising step was accepted although h3 requires at least two. The application now clamps this value to two and includes a regression test.
 
-Generation, export, and non-Apple-Silicon rows remain unchecked until they have been exercised on the stated hardware.
+Visual playback and non-Apple-Silicon rows remain unchecked until they have been exercised on the stated hardware.
