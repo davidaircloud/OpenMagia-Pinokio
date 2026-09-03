@@ -11,7 +11,7 @@ module.exports = {
         },
         message: "python -u server.py",
         on: [{
-          event: "/OpenMagia on (http:\\/\\/localhost:\\d+)/i",
+          event: "/(http:\\/\\/\\S+)/",
           done: true
         }]
       }

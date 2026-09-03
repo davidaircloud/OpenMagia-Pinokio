@@ -6,7 +6,7 @@ const here = __dirname
 const exists = relative => fs.existsSync(path.join(here, relative))
 
 module.exports = {
-  version: "5.0",
+  version: "8.0.0",
   title: "OpenMagia",
   icon: "icon.svg",
   description: "Local-first AI video editor. Native generation is currently supported only on Apple Silicon Macs with at least 64 GB RAM.",

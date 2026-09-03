@@ -13,9 +13,16 @@ const metadata = JSON.parse(fs.readFileSync(path.join(root, "pinokio.json"), "ut
 assert.strictEqual(metadata.title, "OpenMagia")
 assert(fs.existsSync(path.join(root, metadata.icon)), "metadata icon must exist")
 
+const launcher = require(path.join(root, "pinokio.js"))
+assert.strictEqual(launcher.version, "8.0.0", "launcher must use Pinokio's current script schema")
+
+const install = require(path.join(root, "install.js"))
+assert.strictEqual(install.requires && install.requires.bundle, "ai", "AI launcher must request Pinokio's AI bundle")
+
 const start = fs.readFileSync(path.join(root, "start.js"), "utf8")
 assert(start.includes("{{port}}"), "start must use a Pinokio-assigned port")
 assert(!start.includes("start.sh"), "Pinokio must own the server instead of the standalone service launcher")
+assert(start.includes('url: "{{input.event[1]}}"'), "start must set the UI URL from the captured regex group")
 
 const update = fs.readFileSync(path.join(root, "update.js"), "utf8")
 assert(update.includes("git pull --ff-only"), "updates must refuse history-rewriting merges")
@@ -26,7 +33,6 @@ assert(model.includes("I ACCEPT"), "model download must require explicit license
 assert(model.includes("--no-formatter"), "model action must use the resumable OpenMagia installer")
 
 async function validateMenus() {
-  const launcher = require(path.join(root, "pinokio.js"))
   const appDir = path.join(root, "app")
   fs.rmSync(appDir, { recursive: true, force: true })
   const info = active => ({
