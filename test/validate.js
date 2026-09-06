@@ -18,6 +18,8 @@ assert.strictEqual(launcher.version, "8.0.0", "launcher must use Pinokio's curre
 
 const install = require(path.join(root, "install.js"))
 assert.strictEqual(install.requires && install.requires.bundle, "ai", "AI launcher must request Pinokio's AI bundle")
+const installSource = fs.readFileSync(path.join(root, "install.js"), "utf8")
+assert(installSource.includes("python -m unittest discover -s tests"), "install must run OpenMagia's regression suite")
 
 const start = fs.readFileSync(path.join(root, "start.js"), "utf8")
 assert(start.includes("{{port}}"), "start must use a Pinokio-assigned port")
@@ -27,6 +29,7 @@ assert(start.includes('url: "{{input.event[1]}}"'), "start must set the UI URL f
 const update = fs.readFileSync(path.join(root, "update.js"), "utf8")
 assert(update.includes("git pull --ff-only"), "updates must refuse history-rewriting merges")
 assert(!/fs\.rm|reset --hard/.test(update), "updates must preserve user data")
+assert(update.includes("python -m unittest discover -s tests"), "updates must verify the pulled OpenMagia release")
 
 const model = fs.readFileSync(path.join(root, "install-model.js"), "utf8")
 assert(model.includes("I ACCEPT"), "model download must require explicit license acceptance")

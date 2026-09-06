@@ -23,7 +23,10 @@ module.exports = {
       method: "shell.run",
       params: {
         path: "app",
-        message: "python -m compileall -q server.py nle.py h3_prompts.py openmagia_plugins.py"
+        message: [
+          "python -m compileall -q server.py nle.py h3_prompts.py openmagia_plugins.py",
+          "python -m unittest discover -s tests"
+        ]
       }
     },
     {

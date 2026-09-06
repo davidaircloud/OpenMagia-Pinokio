@@ -10,11 +10,11 @@ Paste this repository's public GitHub URL into Pinokio's **Download from URL** f
 
 ## Actions
 
-- **Install Editor** clones OpenMagia and validates its Python sources without downloading model weights.
+- **Install Editor** clones OpenMagia and validates its Python sources and regression suite without downloading model weights.
 - **Start** runs `server.py` as a Pinokio-owned daemon on a dynamically allocated port.
 - **Open UI** appears when the server is ready.
 - **Stop** stops the Pinokio daemon.
-- **Update** fast-forwards both launcher and application repositories.
+- **Update** fast-forwards both launcher and application repositories, then runs OpenMagia's regression suite before reporting success.
 - **Install Generation Model** is a separate, explicit, license-gated download on supported Macs.
 
 Updates do not delete or reset `projects/`, `media/`, `uploads/`, `data/`, `models/`, or `addons/`. These paths are ignored by the application repository and remain inside Pinokio's managed launcher directory.

@@ -10,6 +10,7 @@
 - [x] Update uses fast-forward-only pulls and does not reset application state.
 - [x] Model installation is separate from editor installation and requires exact license acceptance.
 - [x] OpenMagia's installer is resumable after interruption.
+- [x] Install and Update run OpenMagia's application regression suite before reporting success.
 
 ## Clean-machine matrix required before advertising one-click support
 
@@ -40,3 +41,9 @@ Record the Pinokio version, operating system, architecture, memory, available di
 - Generation validation exposed an API boundary defect: one denoising step was accepted although h3 requires at least two. The application now clamps this value to two and includes a regression test.
 
 Non-Apple-Silicon rows remain unchecked until they have been exercised on the stated hardware.
+
+## Current release compatibility — 2026-09-06
+
+- OpenMagia `deba770` passes all 155 application regression tests.
+- The launcher Install and Update actions now run that regression suite after source validation.
+- The lifecycle contract is unchanged: the launcher follows OpenMagia's latest `main`, uses a Pinokio-assigned port, and preserves projects, media, models, settings, and add-ons during updates.
