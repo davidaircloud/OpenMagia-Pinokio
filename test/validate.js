@@ -12,6 +12,8 @@ for (const script of scripts) {
 const metadata = JSON.parse(fs.readFileSync(path.join(root, "pinokio.json"), "utf8"))
 assert.strictEqual(metadata.title, "OpenMagia")
 assert(fs.existsSync(path.join(root, metadata.icon)), "metadata icon must exist")
+const manifest = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"))
+assert.strictEqual(manifest.version, "0.3.0", "launcher release metadata must match the current OpenMagia compatibility update")
 
 const launcher = require(path.join(root, "pinokio.js"))
 assert.strictEqual(launcher.version, "8.0.0", "launcher must use Pinokio's current script schema")
@@ -30,6 +32,7 @@ const update = fs.readFileSync(path.join(root, "update.js"), "utf8")
 assert(update.includes("git pull --ff-only"), "updates must refuse history-rewriting merges")
 assert(!/fs\.rm|reset --hard/.test(update), "updates must preserve user data")
 assert(update.includes("python -m unittest discover -s tests"), "updates must verify the pulled OpenMagia release")
+assert(update.indexOf('path: "app"') < update.indexOf("python -m unittest discover -s tests"), "application update must complete before its regression suite runs")
 
 const model = fs.readFileSync(path.join(root, "install-model.js"), "utf8")
 assert(model.includes("I ACCEPT"), "model download must require explicit license acceptance")

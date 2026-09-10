@@ -42,8 +42,9 @@ Record the Pinokio version, operating system, architecture, memory, available di
 
 Non-Apple-Silicon rows remain unchecked until they have been exercised on the stated hardware.
 
-## Current release compatibility — 2026-09-06
+## Current release compatibility — 2026-09-09
 
-- OpenMagia `deba770` passes all 155 application regression tests.
+- OpenMagia `7789349` passes all 158 application regression tests.
+- Automatic character composition-to-Cast promotion, unavailable-reference preflight, and preview move/resize handles were verified in the application release.
 - The launcher Install and Update actions now run that regression suite after source validation.
 - The lifecycle contract is unchanged: the launcher follows OpenMagia's latest `main`, uses a Pinokio-assigned port, and preserves projects, media, models, settings, and add-ons during updates.

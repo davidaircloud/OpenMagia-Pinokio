@@ -19,6 +19,8 @@ Paste this repository's public GitHub URL into Pinokio's **Download from URL** f
 
 Updates do not delete or reset `projects/`, `media/`, `uploads/`, `data/`, `models/`, or `addons/`. These paths are ignored by the application repository and remain inside Pinokio's managed launcher directory.
 
+The current launcher release is validated against OpenMagia `7789349`, including automatic character-sheet saving, missing-reference preflight, and direct preview move/resize handles. Existing Pinokio installs receive these editor changes through **Update**; no reinstall or project migration is required.
+
 ## Compatibility
 
 | Capability | macOS Apple Silicon | macOS Intel | Linux | Windows |
