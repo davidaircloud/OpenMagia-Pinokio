@@ -13,7 +13,7 @@ const metadata = JSON.parse(fs.readFileSync(path.join(root, "pinokio.json"), "ut
 assert.strictEqual(metadata.title, "OpenMagia")
 assert(fs.existsSync(path.join(root, metadata.icon)), "metadata icon must exist")
 const manifest = JSON.parse(fs.readFileSync(path.join(root, "package.json"), "utf8"))
-assert.strictEqual(manifest.version, "0.3.0", "launcher release metadata must match the current OpenMagia compatibility update")
+assert.strictEqual(manifest.version, "0.3.1", "launcher release metadata must match the current OpenMagia compatibility update")
 
 const launcher = require(path.join(root, "pinokio.js"))
 assert.strictEqual(launcher.version, "8.0.0", "launcher must use Pinokio's current script schema")
