@@ -42,9 +42,9 @@ Record the Pinokio version, operating system, architecture, memory, available di
 
 Non-Apple-Silicon rows remain unchecked until they have been exercised on the stated hardware.
 
-## Current release compatibility — 2026-09-18
+## Current release compatibility — 2026-09-23
 
-- OpenMagia `d907847` passes all 242 Python regression tests plus the JavaScript effect and decoder checks.
-- Live OBS output, loop playback, stacked timeline effects, audio-only MP3 export, and YuE 2 request validation were verified in the application release.
+- OpenMagia `761688a` passes all 254 Python regression tests; the existing JavaScript effect and decoder checks remain part of the launcher lifecycle.
+- Shared-style preservation, standardized video/music composers, YuE 2 LoRA validation, live OBS output, loop playback, stacked timeline effects, and audio-only MP3 export are included in the application release.
 - The launcher Install and Update actions now run that regression suite after source validation.
 - The lifecycle contract is unchanged: the launcher follows OpenMagia's latest `main`, uses a Pinokio-assigned port, and preserves projects, media, models, settings, and add-ons during updates.

@@ -19,7 +19,7 @@ Paste this repository's public GitHub URL into Pinokio's **Download from URL** f
 
 Updates do not delete or reset `projects/`, `media/`, `uploads/`, `data/`, `models/`, or `addons/`. These paths are ignored by the application repository and remain inside Pinokio's managed launcher directory.
 
-The current launcher release is validated against OpenMagia `d907847`, including live OBS output, loop playback, stacked timeline effects, reliable MP3/MP4 export, and improved YuE 2 generation. Existing Pinokio installs receive these editor changes through **Update**; no reinstall or project migration is required.
+The current launcher release is validated against OpenMagia `761688a`, including clearer MiniMax H3 prompt refinement, standardized generation composers, YuE 2 LoRA adapters, live OBS output, stacked timeline effects, and reliable MP3/MP4 export. Existing Pinokio installs receive these editor changes through **Update**; no reinstall or project migration is required.
 
 ## Compatibility
 
