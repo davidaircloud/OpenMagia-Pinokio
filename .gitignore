@@ -1,3 +1,10 @@
 app/
 .DS_Store
 *.log
+
+# launcher-local environments and secrets
+node_modules/
+.env
+.env.*
+!.env.example
+__pycache__/

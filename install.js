@@ -14,7 +14,7 @@ module.exports = {
       params: {
         path: "app",
         message: [
-          "python -m compileall -q server.py nle.py h3_prompts.py openmagia_plugins.py yue_prompts.py yue_worker.py yue_generate.py",
+          "python -m compileall -q server.py nle.py h3_prompts.py openmagia_plugins.py yue_prompts.py yue_worker.py yue_generate.py model_readiness.py qwen_image.py continuity_repair.py scripts/patch_h3mlx_registry.py scripts/validate_h3mlx_registry.py",
           "python -m unittest discover -s tests"
         ]
       }

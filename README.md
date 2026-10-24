@@ -19,7 +19,9 @@ Paste this repository's public GitHub URL into Pinokio's **Download from URL** f
 
 Updates do not delete or reset `projects/`, `media/`, `uploads/`, `data/`, `models/`, or `addons/`. These paths are ignored by the application repository and remain inside Pinokio's managed launcher directory.
 
-The current launcher release is validated against OpenMagia `761688a`, including clearer MiniMax H3 prompt refinement, standardized generation composers, YuE 2 LoRA adapters, live OBS output, stacked timeline effects, and reliable MP3/MP4 export. Existing Pinokio installs receive these editor changes through **Update**; no reinstall or project migration is required.
+The local compatibility checkout is validated against OpenMagia `89c1289`: shared Qwen Image model management, H3MLX support, completed-character queue recovery, the in-app New Project dialog, compact audio/video asset previews, preserved storyboard audio settings, and local AI continuity repair previews. The launcher keeps one application source in `app/`; it does not maintain a second copy of the editor implementation.
+
+Public **Install** and **Update** follow OpenMagia’s upstream `main`. Local commits must be published to that branch before existing public installs can receive them. This local compatibility review does not constitute a fresh Pinokio GUI installation or new cross-platform verification.
 
 ## Compatibility
 

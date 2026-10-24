@@ -48,3 +48,14 @@ Non-Apple-Silicon rows remain unchecked until they have been exercised on the st
 - Shared-style preservation, standardized video/music composers, YuE 2 LoRA validation, live OBS output, loop playback, stacked timeline effects, and audio-only MP3 export are included in the application release.
 - The launcher Install and Update actions now run that regression suite after source validation.
 - The lifecycle contract is unchanged: the launcher follows OpenMagia's latest `main`, uses a Pinokio-assigned port, and preserves projects, media, models, settings, and add-ons during updates.
+
+## Local compatibility verification — 2026-10-24
+
+- Application source: `89c128971736767fb5b233194cdd512687355c4d`. The ignored `app/` checkout has the identical tracked tree as the standalone OpenMagia checkout. It follows the public application URL and tracks `origin/main`; the new commits remain local until publication.
+- Launcher validation passed and preserved the existing `app/` checkout. Menu-state tests now execute in a temporary directory instead of deleting/replacing the real application directory.
+- The copied application started successfully on loopback port 8731. Its HTML, CSS, and JavaScript responses matched the standalone source byte-for-byte. The smoke-test server was stopped afterward.
+- Standalone application: 289 Python tests and the JavaScript storyboard project-scope test passed. A native 15-second H3MLX generation and two-cut audio export checks also passed in the standalone install. Local AI continuity choices, preview toggles, selected-scene application and re-audit were exercised there.
+- No model weights, personal projects, local credentials, caches, trial renders or screenshots were copied into the launcher checkout or included in Git. The application directory is ignored by this launcher repository.
+- This is source/lifecycle-script compatibility and an application startup check, not a new Pinokio GUI installation, model download, or cross-platform hardware certification.
+
+The Pinokio `app/` checkout independently passed all 289 Python tests and the JavaScript project-scope test using the existing managed FFmpeg executable. The launcher menu test was rerun with the real checkout present; it left that checkout intact.
